@@ -6,6 +6,10 @@ d1 $ n "0 2 4 7"
     # midichan 0
 
 
+
+setS "bdrive" $ " bd . bd bd . bd . ~ . bd . ~ . bd . ~ "
+setS "8otf" $ "bd*8"
+
 d2 $ ccv "100" # ccn "30"
     # s "m"
     # midichan 0
@@ -13,6 +17,7 @@ d2 $ ccv "100" # ccn "30"
 d1 $ s "thinkbd . ~ thinkbd ~ <thinksn:3 ~> . thinksn . ~ thinksn ~ thinkbd "
     # gain 1.2
 
+d1 $ s "<^8otf ^bdrive>"
 d1 $ s "9bd . ~ 9bd ~ <9cl:3*2 ~> . 9cl . ~ 9cl ~ 9bd "
 d1 $ s "9bd*4"
 d1 $ s "9bd*8"

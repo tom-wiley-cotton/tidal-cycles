@@ -1,0 +1,1 @@
+/Users/tomcotton/Library/Application Support/SuperCollider/startup.scd

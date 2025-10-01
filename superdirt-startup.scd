@@ -25,7 +25,8 @@ s.reboot { // server options are only updated on reboot
 		~dirt = SuperDirt(2, s); // two output channels, increase if you want to pan across more channels
 		~dirt.loadSoundFiles;   // load samples (path containing a wildcard can be passed in)
 		// for example: ~dirt.loadSoundFiles("/Users/myUserName/Dirt/samples/*");
-		~dirt.loadSoundFile("/Users/tomcotton/tidal-cycles/samples/*");
+		~dirt.loadSoundFiles("/Users/tomcotton/tidal-cycles/samples/*");
+		~dirt.loadSoundFiles("/Users/tomcotton/tidal-cycles/Dirt-Samples/*");
 		// s.sync; // optionally: wait for samples to be read
 		~dirt.start(57120, 0 ! 12);   // start listening on port 57120, create two busses each sending audio to channel 0
 		SuperDirt.default = ~dirt; // make this instance available in sclang (optional)
@@ -43,6 +44,8 @@ s.reboot { // server options are only updated on reboot
 		// you can keep this separate and make it easier to switch between setups
 		// by using "path/to/my/file.scd".load and if necessary commenting out different load statements
 		// ...
+
+		"Users/tomcotton/tidal-cycles/synths/bass8.scd".load;
 
 	};
 

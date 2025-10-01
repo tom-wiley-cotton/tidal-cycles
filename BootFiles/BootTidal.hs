@@ -26,4 +26,4 @@ instance Tidally where tidal = tidalInst
 :set prompt "tidal> "
 :set prompt-cont ""
 
-:script /Users/tomcotton/Documents/tidal-cycles/pure-tides/BootFiles/PdOsc.hs
+:script /Users/tomcotton/tidal-cycles/BootFiles/PdOsc.hs

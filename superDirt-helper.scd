@@ -1,6 +1,8 @@
 // Start SuperDirt
 SuperDirt.start;
 
+include("SuperDirt");
+
 // SuperDirt custom samples and synths
 
 
