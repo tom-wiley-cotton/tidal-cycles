@@ -1,10 +1,72 @@
 set cps (140/60/4)
 
--- 3. Start live coding
-d1 $ n "0 2 4 7"
-    # s "m"
-    # midichan 0
+-- === TEMPLATE === --
+d1 $ ur 16 "pattern pattern2"
+    [ -- patterns
+        ("sound", s ""
+            # orbit 1
+        ),
+        ("note", n "" # s "superpiano"
+            # orbit 1
+        )
+    ]
+    [ -- fx
+        ("crunch", (# crush 3)
+        )
+    ]
 
+
+-- === BASS DRUM === --
+d1 $ ur 4 "four:verb"
+    [ -- patterns
+        ("four", s "bd . bd . bd . bd"
+            # orbit 1
+        ),
+        ("pattern2", n "~ . ~ . ~ . ~" # s "superpiano"
+            # orbit 2
+        )
+    ]
+    [ -- fx
+        ("verb", (# room 0.5)
+        )
+    ]
+
+hush
+
+-- === CYMBALS DRUM === --
+d2 $ ur 4 "2"
+    [ -- patterns
+        ("off", s "[~ 9ho]*4"
+            # gain 0.8
+            # orbit 3
+        ),
+        ("2", s "[9hh]*16"
+            # gain "0.7"
+            # orbit 2
+        )
+    ]
+    [ -- fx
+        ("verb", (# room 0.87)
+        )
+    ]
+
+let pats =
+      [
+        ("a", stack [n "c4 c5 g4 f4 f5 g4 e5 g4" # s "superpiano" # gain "0.7",
+                     n "[c3,g4,c4]" # s "superpiano"# gain "0.7"
+                    ]
+        ),
+        ("b", stack [n "d4 c5 g4 f4 f5 g4 e5 g4" # s "superpiano" # gain "0.7",
+                     n "[d3,a4,d4]" # s "superpiano"# gain "0.7"
+                    ]
+        ),
+        ("c", stack [n "f4 c5 g4 f4 f5 g4 e5 g4" # s "superpiano" # gain "0.7",
+                     n "[f4,c5,f4]" # s "superpiano"# gain "0.7"
+                    ]
+        )
+      ]
+in
+d1 $ ur 12 "a b c" pats []
 
 
 setS "bdrive" $ " bd . bd bd . bd . ~ . bd . ~ . bd . ~ "
@@ -50,5 +112,6 @@ d6 $ n "<[ ~ . ~ c . ~ . g] [ ~ . g c . ~ ~ c c. c c ~ ~ ]> " # s "supervibe"
     # phasr "1"
 
 d6 silence
+
 
 hush
